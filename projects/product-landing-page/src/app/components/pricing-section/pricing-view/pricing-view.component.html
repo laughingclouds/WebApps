@@ -1,1 +1,15 @@
-<p>pricing-view works!</p>
+<div id="product-view" class="align-self-start">
+    <div id="product-name">
+        <span>{{product.name}}</span>
+    </div>
+
+    <p>
+        <span>{{product.price | currency:'USD'}}</span>
+        <pre *ngIf="product.description == null || product.description == undefined; then thenProdDescBlock else elseProdDescBlock"></pre>
+        <ng-template #thenProdDescBlock>No description available</ng-template>
+        <ng-template #elseProdDescBlock><br>{{product.description}}</ng-template>
+</div>
+
+<div>
+    <button class="btn" type="submit"><b>SELECT</b></button>
+</div>

@@ -1,1 +1,9 @@
-<p>pricing-section works!</p>
+<section id="pricing" class="container-sm h-auto w-75">
+    <div class="d-flex">
+        <ng-container *ngFor="let product of products">
+            <ng-container *ngIf="product.name">
+                <app-pricing-view class="text-center border border-dark d-flex flex-column justify-content-evenly" [product]="product"></app-pricing-view>
+            </ng-container>
+        </ng-container>
+    </div>
+</section>

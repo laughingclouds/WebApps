@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+@use '../../../node_modules/bootstrap/scss/bootstrap.scss';
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: #eeeeee;
+    height: 100vh;
+    width: auto;
+}
+
+section {
+    margin: 50px;
+}

@@ -1,1 +1,9 @@
-<p>product-feature works!</p>
+<img id="feature-icon" src="{{feature.imgSrc}}">
+
+<div>
+    <h2>{{feature.heading}}</h2>
+
+    <p *ngIf="feature.description == null || feature.description == undefined; then thenBlock else elseBlock"></p>
+    <ng-template #thenBlock>No description available</ng-template>
+    <ng-template #elseBlock>{{feature.description}}</ng-template>
+</div>
