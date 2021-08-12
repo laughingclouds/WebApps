@@ -14,6 +14,7 @@ export class FeatureSectionComponent implements OnInit {
   constructor(private featureService: FeatureService) { }
 
   ngOnInit(): void {
+    this.getFeatures();
   }
 
   getFeatures(): void {
