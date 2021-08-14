@@ -1,0 +1,9 @@
+.w {
+    width: 50%;
+}
+
+@media (min-width: 580px) {
+    .w {
+        width: 100%;
+    }
+}
