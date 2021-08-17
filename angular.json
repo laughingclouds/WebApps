@@ -535,6 +535,7 @@
               "projects/ng-video-game-db/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/ng-video-game-db/src/styles.scss"
             ],
             "scripts": []
@@ -603,6 +604,7 @@
               "projects/ng-video-game-db/src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/ng-video-game-db/src/styles.scss"
             ],
             "scripts": []
