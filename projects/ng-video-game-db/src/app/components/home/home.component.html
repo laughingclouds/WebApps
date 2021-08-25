@@ -13,6 +13,10 @@
     </mat-form-field>
 </div>
 
+<div class="center" id="delete-spinner">
+    <mat-spinner></mat-spinner>
+</div>
+
 <div class="games">
     <ng-container *ngFor="let game of games">
         <div class="game" (click)="openGameDetails(game.id)">
@@ -30,5 +34,7 @@
                 </div>
             </div>
         </div>
+        <!-- To remove the spinner, I couldn't think of any better way -->
+        {{deleteSpinner()}}
     </ng-container>
 </div>
