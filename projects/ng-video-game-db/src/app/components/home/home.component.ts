@@ -32,11 +32,18 @@ export class HomeComponent implements OnInit, OnDestroy {
     });
   }
 
-  deleteSpinner(): void {
-    document.getElementById("delete-spinner")?.remove();
+  changeSpinnerView(val: any = false): void {
+    let temp = document.getElementById("spinner");
+
+    if (val) {
+      temp!.style.display = "flex";
+    } else {
+      temp!.style.display = "none";
+    }
   }
 
   searchGames(sort: string, search?: string): void {
+
     this.gameSub = this.httpService
       .getGamesList(sort, search)
       .subscribe((gameList: APIResponse<Game>) => {
