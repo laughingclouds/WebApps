@@ -12,7 +12,7 @@ import { HttpService } from '../../services/http.service';
 export class HomeComponent implements OnInit, OnDestroy {
 
   public sort!: string;
-  public games?: Array<Game>
+  public games = [] as Array<Game>;
   private routerSub!: Subscription;
   private gameSub!: Subscription;
 
@@ -35,11 +35,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   changeSpinnerView(val: any = false): void {
     let temp = document.getElementById("spinner");
     temp?.remove();
-    // if (val) {
-    //   temp!.style.display = "flex";
-    // } else {
-    //   temp!.style.display = "none";
-    // }
   }
 
   searchGames(sort: string, search?: string): void {
