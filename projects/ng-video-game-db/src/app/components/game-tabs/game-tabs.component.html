@@ -2,8 +2,7 @@
     <mat-tab-group mat-align-tabs="start" backgroundColor="primary">
         <mat-tab label="About">
             <p *ngIf="game.parent_platforms?.length" class="game-tabs-par">
-                <span *ngFor="let game of game.parent_platforms; let last = last">{{ game.platform.slug }}<span
-                        *ngIf="!last">, </span></span>
+                <span *ngFor="let game of game.parent_platforms; let last = last">{{ game.platform.slug }}<span *ngIf="!last">, </span></span>
             </p>
 
             <p class="game-tabs-par" *ngIf="game.publishers?.length">
