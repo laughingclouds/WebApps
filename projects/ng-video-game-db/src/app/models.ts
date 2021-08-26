@@ -23,7 +23,7 @@ interface Genre {
     name: string;
 }
 
-interface ParentPlantform {
+interface ParentPlatform {
     platform: {
         slug: string;
     };
