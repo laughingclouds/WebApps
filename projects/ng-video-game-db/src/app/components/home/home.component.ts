@@ -34,12 +34,12 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   changeSpinnerView(val: any = false): void {
     let temp = document.getElementById("spinner");
-
-    if (val) {
-      temp!.style.display = "flex";
-    } else {
-      temp!.style.display = "none";
-    }
+    temp?.remove();
+    // if (val) {
+    //   temp!.style.display = "flex";
+    // } else {
+    //   temp!.style.display = "none";
+    // }
   }
 
   searchGames(sort: string, search?: string): void {
@@ -48,7 +48,6 @@ export class HomeComponent implements OnInit, OnDestroy {
       .getGamesList(sort, search)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
-        console.log(gameList);
       });
   }
 
