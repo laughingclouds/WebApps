@@ -1,18 +1,18 @@
 export interface Game {
+    id: string
     background_image: string;
-    description: string;
-    genre: Array<Genre>;
-    id: string;
-    metacritic: number;
-    metacritic_url: string;
     name: string;
-    parent_platforms: Array<ParentPlantform>;
-    publishers: Array<Publishers>;
     released: string;
+    metacritic_url: string;
+    website: string;
+    description: string;
+    metacritic: number;
+    genres: Array<Genre>;
+    parent_platforms: Array<ParentPlatform>;
+    publishers: Array<Publishers>;
     ratings: Array<Rating>;
     screenshots: Array<Screenshots>;
     trailers: Array<Trailer>;
-    website: string;
 }
 
 export interface APIResponse<T> {
