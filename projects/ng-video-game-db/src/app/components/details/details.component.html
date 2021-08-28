@@ -1,6 +1,11 @@
+<div class="center" id="details-spinner">
+    <mat-spinner></mat-spinner>
+    <!-- <mat-progress-bar></mat-progress-bar> -->
+</div>
+
 <div class="details">
     <div class="game-banner">
-        <img class="game-banner-img" src="{{ game.background_image }}" alt="background image">
+        <img class="game-banner-img" src="{{ game.background_image }}" alt="background image" />
     </div>
 
     <div class="game-content">
@@ -8,7 +13,9 @@
             <div class="game-header">
                 <h1 class="game-header-title">{{ game.name }}</h1>
 
-                <h2 class="game-header-release-date">Released: {{ game.released | date }}</h2>
+                <h2 class="game-header-release-date">
+                    Release: {{ game.released | date }}
+                </h2>
 
                 <p class="game-header-genres">
                     <span *ngFor="let genre of game.genres; let last = last">{{ genre.name }}<span *ngIf="!last">, </span></span>
@@ -16,13 +23,11 @@
 
                 <div class="game-gauge">
                     <mwl-gauge class="two" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="gameRating" [animated]="true" [color]="getColor" [animationDuration]="2"></mwl-gauge>
-
-                    <a href="{{ game.metacritic_url }}" target="_blank" class="game-gauge-label">Metacritic</a>
+                    <a class="game-gauge-label" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
                 </div>
             </div>
-
-            <!-- tabs will go here, in a separate component -->
             <app-game-tabs [game]="game"></app-game-tabs>
         </div>
     </div>
+    {{changeSpinnerView()}}
 </div>

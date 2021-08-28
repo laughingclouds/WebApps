@@ -22,15 +22,12 @@
         <div class="game" (click)="openGameDetails(game.id)">
             <div class="game-thumb-container">
                 <img *ngIf="game.background_image" src="{{ game.background_image }}" alt="thumbnail" class="game-thumbnail" />
-
                 <p *ngIf="!game.background_image">No image</p>
             </div>
-
             <div class="game-description">
                 <p class="game-name">{{ game.name }}</p>
-
                 <div class="game-platforms">
-                    <img *ngFor="let gamePlatform of game.parent_platforms" class="game-platform" src="assets/images/platforms/{{ gamePlatform.platform.slug | lowercase }}.svg" alt="{{ gamePlatform.platform.slug }}">
+                    <img *ngFor="let gamePlatform of game.parent_platforms" class="game-platform" src="assets/images/platforms/{{ gamePlatform.platform.name | lowercase }}.svg" alt="{{ gamePlatform.platform.name }}" />
                 </div>
             </div>
         </div>

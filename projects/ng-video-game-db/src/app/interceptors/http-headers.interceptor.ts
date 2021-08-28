@@ -1,19 +1,16 @@
-import { Injectable } from '@angular/core';
-import {
-  HttpRequest,
-  HttpHandler,
-  HttpEvent,
-  HttpInterceptor
-} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class HttpHeadersInterceptor implements HttpInterceptor {
+  constructor() {}
 
-  constructor() { }
-
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    request = request.clone({
+  intercept(
+    req: HttpRequest<any>,
+    next: HttpHandler
+  ): Observable<HttpEvent<any>> {
+    req = req.clone({
       setHeaders: {
         'x-rapidapi-key': 'esGbwrm390mshS2BCl0RALxQRtZTp1W7sFMjsnyJlJzDXVkW0H',
         'x-rapidapi-host': 'rawg-video-games-database.p.rapidapi.com',
@@ -21,7 +18,7 @@ export class HttpHeadersInterceptor implements HttpInterceptor {
       setParams: {
         key: 'e40e743af2c94b0c916a8aa618fb4473',
       }
-    })
-    return next.handle(request);
+    });
+    return next.handle(req);
   }
 }

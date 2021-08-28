@@ -7,8 +7,8 @@ import { Game } from '../../models';
   styleUrls: ['./game-tabs.component.scss']
 })
 export class GameTabsComponent implements OnInit {
-  @Input() game?: Game;
-
+  @Input() game!: Game;
+  
   constructor() { }
 
   ngOnInit(): void {

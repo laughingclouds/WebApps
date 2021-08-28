@@ -8,17 +8,18 @@ import { MatTabsModule } from '@angular/material/tabs'
 import { MatIconModule } from '@angular/material/icon'
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 
 @NgModule({
   declarations: [
@@ -29,16 +30,17 @@ import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
     GameTabsComponent
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
     FormsModule,
-    HttpClientModule,
-    GaugeModule.forRoot(),
     MatTabsModule,
     MatIconModule,
-    MatFormFieldModule,
+    BrowserModule,
     MatSelectModule,
+    AppRoutingModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatProgressBarModule,
+    GaugeModule.forRoot(),
+    BrowserAnimationsModule,
     MatProgressSpinnerModule
   ],
   providers: [
@@ -51,8 +53,8 @@ import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorsInterceptor,
       multi: true,
-    }
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
