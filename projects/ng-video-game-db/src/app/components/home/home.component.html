@@ -27,7 +27,7 @@
             <div class="game-description">
                 <p class="game-name">{{ game.name }}</p>
                 <div class="game-platforms">
-                    <img *ngFor="let gamePlatform of game.parent_platforms" class="game-platform" src="assets/images/platforms/{{ gamePlatform.platform.name | lowercase }}.svg" alt="{{ gamePlatform.platform.name }}" />
+                    <img *ngFor="let gamePlatform of game.parent_platforms" class="game-platform" src="assets/images/platforms/{{ gamePlatform.platform.name | lowercase | platformNameResolver }}.svg" alt="{{ gamePlatform.platform.name }}" />
                 </div>
             </div>
         </div>
