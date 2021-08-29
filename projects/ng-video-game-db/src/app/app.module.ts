@@ -20,6 +20,7 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { HttpErrorsInterceptor } from './interceptors/http-errors.interceptor';
 import { HttpHeadersInterceptor } from './interceptors/http-headers.interceptor';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PlatformNameResolverPipe } from './custom-pipes/platform-name-resolver.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SearchBarComponent,
     HomeComponent,
     DetailsComponent,
-    GameTabsComponent
+    GameTabsComponent,
+    PlatformNameResolverPipe
   ],
   imports: [
     FormsModule,
@@ -56,5 +58,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     },
   ],
   bootstrap: [AppComponent],
+  exports: [
+    PlatformNameResolverPipe
+  ],
 })
 export class AppModule { }
