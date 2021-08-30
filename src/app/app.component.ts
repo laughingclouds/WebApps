@@ -15,4 +15,11 @@ export class AppComponent {
     **/
     ((document.getElementById("ng-video-game-db") as HTMLIFrameElement).contentWindow?.document.getElementsByClassName("search-button")[0] as HTMLButtonElement).click();
   }
+
+  clickToFillScreen(evt: MouseEvent): void {
+    console.log("Event triggered");
+    let iframe = evt.target as HTMLIFrameElement;
+    // This will enlarge the iframe
+    iframe.style.cssText = `border: 0px; height: 100vh; width: 100vh; padding: 0px;`;
+  }
 }
