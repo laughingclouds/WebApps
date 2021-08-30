@@ -1,5 +1,18 @@
-<p>This is a little messy I know, but try to open these individual iframes on a new tab. (The first one doesn't open in new tab for some reason)</p>
-<iframe src="assets/tic-tac-toe/index.html" width="500" height="500" frameborder="0"></iframe>
-<iframe src="assets/product-landing-page/index.html" width="500" height="500" frameborder="0"></iframe>
-<iframe src="assets/tribute-page/index.html" width="500" height="500" frameborder="0"></iframe>
-<iframe src="assets/ng-video-game-db/index.html" width="500" height="500" frameborder="0"></iframe>
+<p>
+    This is a little messy I know, but try to open these individual iframes on a new tab.
+    A few of them don't open in a new tab.
+
+    TODO: Center the div.iframes element and its' children.
+    TODO: ng-video-game-db is console logging the api response, get rid of that, it's annoying
+</p>
+
+<div class="iframes">
+    <iframe [class.fill-screen]="fillScreen" (click)="fillScreen = true" id="tic-tac-toe" src="assets/tic-tac-toe/index.html"></iframe>
+
+    <iframe [class.fill-screen]="fillScreen" (click)="fillScreen = true" id="product-landing-page" src="assets/product-landing-page/index.html"></iframe>
+
+    <iframe [class.fill-screen]="fillScreen" (click)="fillScreen = true" id="tribute-page" src="assets/tribute-page/index.html"></iframe>
+
+    <iframe [class.fill-screen]="fillScreen" (click)="fillScreen = true" id="ng-video-game-db" src="assets/ng-video-game-db/index.html"
+        (load)="clickSearchButtonNgVideoGameDB()"></iframe>
+</div>

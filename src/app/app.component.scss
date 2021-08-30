@@ -1,3 +1,9 @@
 iframe {
-    margin: 5px;
+  height: 500px;
+  width: 500px;
+}
+
+.fill-screen {
+    width: 100vh;
+    height: auto;
 }
