@@ -5,13 +5,15 @@
     TODO: ng-video-game-db is console logging the api response, get rid of that, it's annoying
 </p>
 
-<div class="iframes">
-    <iframe (click)="clickToFillScreen($event)" id="tic-tac-toe" src="assets/tic-tac-toe/index.html"></iframe>
+<div id="outermost-div">
+    <div class="iframes">
+        <iframe (click)="clickToFillScreen($event)" id="tic-tac-toe" src="assets/tic-tac-toe/index.html"></iframe>
+        
+        <iframe (click)="clickToFillScreen($event)" id="ng-video-game-db" src="assets/ng-video-game-db/index.html"
+            (load)="clickSearchButtonNgVideoGameDB()"></iframe>
     
-    <iframe (click)="clickToFillScreen($event)" id="ng-video-game-db" src="assets/ng-video-game-db/index.html"
-        (load)="clickSearchButtonNgVideoGameDB()"></iframe>
-
-    <iframe (click)="clickToFillScreen($event)" id="product-landing-page" src="assets/product-landing-page/index.html"></iframe>
-
-    <iframe (click)="clickToFillScreen($event)" id="tribute-page" src="assets/tribute-page/index.html"></iframe>
+        <iframe (click)="clickToFillScreen($event)" id="product-landing-page" src="assets/product-landing-page/index.html"></iframe>
+    
+        <iframe (click)="clickToFillScreen($event)" id="tribute-page" src="assets/tribute-page/index.html"></iframe>
+    </div>
 </div>

@@ -21,5 +21,9 @@ export class AppComponent {
     let iframe = evt.target as HTMLIFrameElement;
     // This will enlarge the iframe
     iframe.style.cssText = `border: 0px; height: 100vh; width: 100vh; padding: 0px;`;
+    iframe.scroll(); iframe.focus(); // I dunno, maybe it works?
+
+    let parentDiv = iframe.parentElement as HTMLDivElement;
+    parentDiv.style.cssText = `display: flex; flex-direction: column;`;
   }
 }
